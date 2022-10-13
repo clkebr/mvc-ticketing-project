@@ -44,8 +44,8 @@ public class UserController {
         model.addAttribute("users",userService.findAll());
         return "/user/update";
     }
-    @PostMapping("/update{username}")
-    public  String updateUser(@PathVariable("username") String username, @ModelAttribute UserDTO user){
+    @PostMapping("/update")
+    public  String updateUser( @ModelAttribute UserDTO user){
         userService.update(user);
 
         return "redirect:/user/create";
